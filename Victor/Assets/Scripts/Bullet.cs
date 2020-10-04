@@ -6,11 +6,34 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect;
+    private GameObject player;
+
+    [HideInInspector]
+    public float range = 1f;
+    [HideInInspector]
+    public float size = 1f;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void Update()
+    {
+        if (Vector2.Distance(player.transform.position, gameObject.transform.position) >= range)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 0.3f);
-        Destroy(gameObject);
+        if (collision.gameObject.name != gameObject.name)
+        {
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            effect.transform.localScale *= size;
+            Destroy(effect, 0.3f);
+            Destroy(gameObject);
+        }
     }
 }
