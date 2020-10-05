@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour
     public float range = 1f;
     [HideInInspector]
     public float size = 1f;
+    [HideInInspector]
+    public int damage = 1;
 
     private void Start()
     {
@@ -30,6 +32,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.name != gameObject.name)
         {
+            collision.gameObject.GetComponent<Stats>().removeLife(damage);
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             effect.transform.localScale *= size;
             Destroy(effect, 0.3f);
