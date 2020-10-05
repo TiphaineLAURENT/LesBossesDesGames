@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
     public Shooting shooting;
+    public GameObject InventoryUI;
+
+    public static bool GameInventory = false;
+
     private int point = 0;
     private int exp = 0;
     private int min = 1;
@@ -14,6 +19,36 @@ public class UIController : MonoBehaviour
     private int size = 4;
     private int damage = 3;
     private float cost = 1f;
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (GameInventory)
+            {
+                HideInventory();
+            }
+            else
+            {
+                ShowInventory();
+            }
+        }
+    }
+
+    public void HideInventory()
+    {
+        InventoryUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameInventory = false;
+    }
+
+    void ShowInventory()
+    {
+        InventoryUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameInventory = true;
+    }
 
     public void gainExp()
     {
