@@ -7,44 +7,58 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
-    private float defRange = 15f;
-    private float range = 15f;
+    private float maxRange = 30f;
+    private float defRange = 9f;
+    private float range;
 
-    private float defSpeed= 20f;
-    private float speed = 20f;
+    private float maxSpeed = 60f;
+    private float defSpeed = 18f;
+    private float speed;
 
+    private float maxSize = 10f;
     private float defSize = 4f;
-    private float size = 4f;
+    private float size;
 
-    private int defDamage = 40;
-    private int damage = 40;
+    private int maxDamage = 100;
+    private int defDamage = 30;
+    private int damage;
 
-    private int defCost = 5;
-    private int cost = 5;
+    private int maxCost = 100;
+    private int defCost = 10;
+    private int cost;
 
-    public void setRange(float range)
+    private void Start()
     {
-        this.range = defRange * range;
+        range = defRange;
+        speed = defSpeed;
+        size = defSize;
+        damage = defDamage;
+        cost = defCost;
     }
 
-    public void setSpeed(float speed)
+    public void setRange(int range)
     {
-        this.speed = defSpeed * speed;
+        this.range = maxRange * range / 10;
     }
 
-    public void setSize(float size)
+    public void setSpeed(int speed)
     {
-        this.size = defSize * size;
+        this.speed = maxSpeed * speed / 10;
+    }
+
+    public void setSize(int size)
+    {
+        this.size = maxSize * size / 10;
     }
 
     public void setDamage(int damage)
     {
-        this.damage = defDamage + damage;
+        this.damage = maxDamage * damage / 10;
     }
 
-    public void setCost(int cost)
+    public void setCost(float cost)
     {
-        this.cost = defCost + cost;
+        this.cost = (int) (maxCost * cost / 10);
     }
 
     // Update is called once per frame

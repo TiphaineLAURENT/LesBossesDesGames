@@ -6,32 +6,41 @@ public class UIController : MonoBehaviour
 {
     public Shooting shooting;
     private int point = 0;
-    private float min = 0.2f;
-    private float speed = 1f;
-    private float speedMax = 2f;
-    private float speedMod = 0.1f;
-    private float range = 1f;
-    private float rangeMax = 2f;
-    private float rangeMod = 0.1f;
-    private float size = 1f;
-    private float sizeMax = 2f;
-    private float sizeMod = 0.1f;
+    private int exp = 0;
+    private int min = 1;
+    private int max = 10;
+    private int range = 3;
+    private int speed = 3;
+    private int size = 4;
+    private int damage = 3;
+    private float cost = 1f;
+
+    public void gainExp()
+    {
+        exp++;
+        if (exp >= 10)
+        {
+            point++;
+            exp -= 10;
+            Debug.Log("point:" + point);
+        }
+    }
 
     public void removeRange()
     {
         if (range > min)
         {
-            point += 1;
-            range -= rangeMod;
+            point++;
+            range--;
             shooting.setRange(range);
         }
     }
     public void addRange()
     {
-        if (point > 0 && range < rangeMax)
+        if (point > 0 && range < max)
         {
-            point -= 1;
-            range += rangeMod;
+            point--;
+            range++;
             shooting.setRange(range);
         }
     }
@@ -40,18 +49,18 @@ public class UIController : MonoBehaviour
     {
         if (size > min)
         {
-            point += 1;
-            size -= sizeMod;
+            point++;
+            size--;
             shooting.setSize(size);
         }
     }
 
     public void addSize()
     {
-        if (point > 0 && size < sizeMax)
+        if (point > 0 && size < max)
         {
-            point -= 1;
-            size += sizeMod;
+            point--;
+            size++;
             shooting.setSize(size);
         }
     }
@@ -60,19 +69,59 @@ public class UIController : MonoBehaviour
     {
         if (speed > min)
         {
-            point += 1;
-            speed -= speedMod;
+            point++;
+            speed--;
             shooting.setSpeed(speed);
         }
     }
 
     public void addSpeed()
     {
-        if (point > 0 && speed < speedMax)
+        if (point > 0 && speed < max)
         {
-            point -= 1;
-            speed += speedMod;
+            point--;
+            speed++;
             shooting.setSpeed(speed);
+        }
+    }
+
+    public void removeDamage()
+    {
+        if (damage > min)
+        {
+            point++;
+            damage--;
+            shooting.setDamage(damage);
+        }
+    }
+
+    public void addDamage()
+    {
+        if (point > 0 && damage < max)
+        {
+            point--;
+            damage++;
+            shooting.setDamage(damage);
+        }
+    }
+
+    public void removeCost()
+    {
+        if (cost > min)
+        {
+            point++;
+            cost -= 0.1f;
+            shooting.setCost(cost);
+        }
+    }
+
+    public void addCost()
+    {
+        if (point > 0 && cost < max)
+        {
+            point--;
+            cost += 0.1f;
+            shooting.setCost(cost);
         }
     }
 }

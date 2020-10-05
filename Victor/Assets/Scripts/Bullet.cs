@@ -15,12 +15,12 @@ public class Bullet : MonoBehaviour
     [HideInInspector]
     public int damage = 1;
 
-    private void Start()
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
+    void Update()
     {
         if (Vector2.Distance(player.transform.position, gameObject.transform.position) >= range)
         {

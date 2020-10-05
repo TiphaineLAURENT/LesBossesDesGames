@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour
     //public GameObject fireNpc;
     //public GameObject lightningNpc;
 
-    private float period = 5f;
+    private float period = 1f;
     private Transform pos;
 
     // Start is called before the first frame update

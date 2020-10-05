@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    private UIController Exp;
     private int life = 100;
     private int mana = 100;
 
@@ -11,6 +12,7 @@ public class Stats : MonoBehaviour
 
     private void Start()
     {
+        Exp = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIController>();
         StartCoroutine("DoCheck");
     }
 
@@ -19,6 +21,7 @@ public class Stats : MonoBehaviour
         if (life <= 0)
         {
             Debug.Log("Dead");
+            Exp.gainExp();
             Destroy(gameObject);
         }
     }
