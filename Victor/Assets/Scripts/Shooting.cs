@@ -16,8 +16,8 @@ public class Shooting : MonoBehaviour
     private float defSize = 4f;
     private float size = 4f;
 
-    private int defDamage = 10;
-    private int damage = 10;
+    private int defDamage = 40;
+    private int damage = 40;
 
     private int defCost = 5;
     private int cost = 5;
