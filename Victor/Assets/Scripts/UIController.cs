@@ -1,12 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
     public Shooting shooting;
     public GameObject InventoryUI;
+
+    public TextMeshProUGUI PointLabel;
+    public TextMeshProUGUI RangeQuantity;
+    public TextMeshProUGUI SpeedQuantity;
+    public TextMeshProUGUI SizeQuantity;
+    public TextMeshProUGUI CostQuantity;
+    public TextMeshProUGUI DamageQuantity;
 
     public static bool GameInventory = false;
 
@@ -20,7 +29,18 @@ public class UIController : MonoBehaviour
     private int damage = 3;
     private float cost = 1f;
 
-    // Update is called once per frame
+    // Pour gérer les valeurs de base
+    void Start()
+    {
+        PointLabel.text = point + " Points";
+        RangeQuantity.text = "" + range / 0.5f;
+        SpeedQuantity.text = "" + speed;
+        SizeQuantity.text = "" + size;
+        CostQuantity.text = "" + (cost * 10f);
+        DamageQuantity.text = "" + damage;
+    }
+
+    // Pour gérer la touche I
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -74,6 +94,8 @@ public class UIController : MonoBehaviour
             point++;
             range -= 0.5f;
             shooting.setRange(range);
+            PointLabel.text = point + " Points";
+            RangeQuantity.text = "" + range / 0.5f;
         }
     }
     public void addRange()
@@ -83,6 +105,8 @@ public class UIController : MonoBehaviour
             point--;
             range += 0.5f;
             shooting.setRange(range);
+            PointLabel.text = point + " Points";
+            RangeQuantity.text = "" + range / 0.5f;
         }
     }
 
@@ -93,6 +117,8 @@ public class UIController : MonoBehaviour
             point++;
             size--;
             shooting.setSize(size);
+            PointLabel.text = point + " Points";
+            SizeQuantity.text = "" + size;
         }
     }
 
@@ -103,6 +129,8 @@ public class UIController : MonoBehaviour
             point--;
             size++;
             shooting.setSize(size);
+            PointLabel.text = point + " Points";
+            SizeQuantity.text = "" + size;
         }
     }
 
@@ -113,6 +141,8 @@ public class UIController : MonoBehaviour
             point++;
             speed--;
             shooting.setSpeed(speed);
+            PointLabel.text = point + " Points";
+            SpeedQuantity.text = "" + speed;
         }
     }
 
@@ -123,6 +153,8 @@ public class UIController : MonoBehaviour
             point--;
             speed++;
             shooting.setSpeed(speed);
+            PointLabel.text = point + " Points";
+            SpeedQuantity.text = "" + speed;
         }
     }
 
@@ -133,6 +165,8 @@ public class UIController : MonoBehaviour
             point++;
             damage--;
             shooting.setDamage(damage);
+            PointLabel.text = point + " Points";
+            DamageQuantity.text = "" + damage;
         }
     }
 
@@ -143,26 +177,32 @@ public class UIController : MonoBehaviour
             point--;
             damage++;
             shooting.setDamage(damage);
+            PointLabel.text = point + " Points";
+            DamageQuantity.text = "" + damage;
         }
     }
 
     public void removeCost()
     {
-        if (cost > 0.1)
+        if (point > 0 && cost > 0.1)
         {
-            point++;
+            point--;
             cost -= 0.1f;
             shooting.setCost(cost);
+            PointLabel.text = point + " Points";
+            CostQuantity.text = "" + cost * 10f;
         }
     }
 
     public void addCost()
     {
-        if (point > 0 && cost < max)
+        if (cost < max)
         {
-            point--;
+            point++;
             cost += 0.1f;
             shooting.setCost(cost);
+            PointLabel.text = point + " Points";
+            CostQuantity.text = "" + cost * 10f;
         }
     }
 }
