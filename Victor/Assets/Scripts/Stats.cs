@@ -5,13 +5,18 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     private UIController Exp;
-    private int life = 100;
-    private int mana = 100;
+    public int expGain = 1;
+    public int maxLife = 100;
+    private int life ;
+    public int maxMana = 100;
+    private int mana;
 
     private float period = 1f;
 
     private void Start()
     {
+        life = maxLife;
+        mana = maxMana;
         Exp = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIController>();
         StartCoroutine("DoCheck");
     }
@@ -20,8 +25,8 @@ public class Stats : MonoBehaviour
     {
         if (life <= 0)
         {
-            Debug.Log("Dead");
-            Exp.gainExp();
+            Debug.Log("Dead + " + expGain);
+            Exp.gainExp(expGain);
             Destroy(gameObject);
         }
     }
@@ -53,11 +58,11 @@ public class Stats : MonoBehaviour
         while (true)
         {
             life += 5;
-            if (life > 100)
-                life = 100;
+            if (life > maxLife)
+                life = maxLife;
             mana += 3;
-            if (mana > 100)
-                mana = 100;
+            if (mana > maxMana)
+                mana = maxMana;
             yield return new WaitForSeconds(period);
         }
     }

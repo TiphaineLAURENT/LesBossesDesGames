@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     private GameObject player;
 
     [HideInInspector]
+    public GameObject caster;
+    [HideInInspector]
     public float range = 1f;
     [HideInInspector]
     public float size = 1f;
@@ -30,7 +32,8 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name != gameObject.name)
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name != gameObject.name && collision.gameObject.name != caster.name)
         {
             collision.gameObject.GetComponent<Stats>().removeLife(damage);
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);

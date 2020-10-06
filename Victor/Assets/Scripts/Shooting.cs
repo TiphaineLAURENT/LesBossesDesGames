@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
-    private float maxRange = 30f;
+    private float maxRange = 60f;
     private float defRange = 9f;
     private float range;
 
@@ -36,7 +36,7 @@ public class Shooting : MonoBehaviour
         cost = defCost;
     }
 
-    public void setRange(int range)
+    public void setRange(float range)
     {
         this.range = maxRange * range / 10;
     }
@@ -79,6 +79,7 @@ public class Shooting : MonoBehaviour
             bullet.GetComponent<Bullet>().range = range;
             bullet.GetComponent<Bullet>().size = size;
             bullet.GetComponent<Bullet>().damage = damage;
+            bullet.GetComponent<Bullet>().caster = gameObject;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
             bullet.transform.localScale *= size;

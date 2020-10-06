@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour
     private int exp = 0;
     private int min = 1;
     private int max = 10;
-    private int range = 3;
+    private float range = 1.5f;
     private int speed = 3;
     private int size = 4;
     private int damage = 3;
@@ -55,10 +55,11 @@ public class UIController : MonoBehaviour
         GameInventory = true;
     }
 
-    public void gainExp()
+    public void gainExp(int expGain)
     {
-        exp++;
-        if (exp >= 10)
+        Debug.Log("exp : " + exp + " | gain : " + expGain);
+        exp += expGain;
+        while (exp >= 10)
         {
             point++;
             exp -= 10;
@@ -68,10 +69,10 @@ public class UIController : MonoBehaviour
 
     public void removeRange()
     {
-        if (range > min)
+        if (range > 0.5)
         {
             point++;
-            range--;
+            range -= 0.5f;
             shooting.setRange(range);
         }
     }
@@ -80,7 +81,7 @@ public class UIController : MonoBehaviour
         if (point > 0 && range < max)
         {
             point--;
-            range++;
+            range += 0.5f;
             shooting.setRange(range);
         }
     }
@@ -147,7 +148,7 @@ public class UIController : MonoBehaviour
 
     public void removeCost()
     {
-        if (cost > min)
+        if (cost > 0.1)
         {
             point++;
             cost -= 0.1f;
