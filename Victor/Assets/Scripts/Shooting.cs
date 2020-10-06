@@ -72,7 +72,8 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        if (gameObject.GetComponent<Stats>().getMana() > cost) {
+        if (gameObject.GetComponent<Stats>().getMana() > cost &&
+            !GameObject.FindGameObjectWithTag("GameController").GetComponent<UIController>().getInventoryState()) {
             gameObject.GetComponent<Stats>().removeMana(cost);
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bullet.GetComponent<Bullet>().range = range;
@@ -82,9 +83,6 @@ public class Shooting : MonoBehaviour
 
             bullet.transform.localScale *= size;
             rb.AddForce(firePoint.up * speed, ForceMode2D.Impulse);
-        } else
-        {
-            Debug.Log("Not enought mana");
         }
     }
 }

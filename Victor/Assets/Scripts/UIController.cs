@@ -36,6 +36,11 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public bool getInventoryState()
+    {
+        return GameInventory;
+    }
+
     public void HideInventory()
     {
         InventoryUI.SetActive(false);
