@@ -22,6 +22,7 @@ public class Ia : MonoBehaviour
 
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
