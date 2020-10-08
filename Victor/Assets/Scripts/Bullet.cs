@@ -32,7 +32,6 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name != gameObject.name && collision.gameObject.name != caster.name)
         {
             collision.gameObject.GetComponent<Stats>().removeLife(damage);

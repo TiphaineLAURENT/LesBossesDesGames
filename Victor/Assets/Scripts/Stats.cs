@@ -25,7 +25,6 @@ public class Stats : MonoBehaviour
     {
         if (life <= 0)
         {
-            Debug.Log("Dead + " + expGain);
             Exp.gainExp(expGain);
             Destroy(gameObject);
         }
@@ -33,19 +32,26 @@ public class Stats : MonoBehaviour
 
     public void removeLife(int damage)
     {
-        Debug.Log("Damage : " + damage);
         life -= damage;
-        Debug.Log("Life : " + life);
     }
 
     public int getLife()
     {
         return life;
     }
+    public void fullLife()
+    {
+        life = maxLife;
+    }
 
     public void removeMana(int cost)
     {
         mana -= cost;
+    }
+
+    public void fullMana()
+    {
+        mana = maxMana;
     }
 
     public int getMana()
@@ -57,7 +63,7 @@ public class Stats : MonoBehaviour
     {
         while (true)
         {
-            life += 5;
+            life += 3;
             if (life > maxLife)
                 life = maxLife;
             mana += 3;

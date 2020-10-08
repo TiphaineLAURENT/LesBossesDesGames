@@ -23,21 +23,29 @@ public class UIController : MonoBehaviour
     private int exp = 0;
     private int min = 1;
     private int max = 10;
+    private int lvl = 1;
+    private int expNeeded = 1;
+    private bool switchExp = true;
     private float range = 1.5f;
-    private int speed = 3;
-    private int size = 4;
-    private int damage = 3;
-    private float cost = 1f;
+    private float rangeScale = 0.5f;
+    private float size = 0.5f;
+    private float sizeScale = 0.25f;
+    private float speed = 1.0f;
+    private float speedScale = 0.5f;
+    private float damage = 1.5f;
+    private float damageScale = 0.5f;
+    private float cost = 2f;
+    private float costScale = 0.1f;
 
     // Pour gérer les valeurs de base
     void Start()
     {
         PointLabel.text = point + " Points";
-        RangeQuantity.text = "" + range / 0.5f;
-        SpeedQuantity.text = "" + speed;
-        SizeQuantity.text = "" + size;
-        CostQuantity.text = "" + (cost * 10f);
-        DamageQuantity.text = "" + damage;
+        RangeQuantity.text = "" + range / rangeScale;
+        SizeQuantity.text = "" + size / sizeScale;
+        SpeedQuantity.text = "" + speed / speedScale;
+        DamageQuantity.text = "" + damage / damageScale;
+        CostQuantity.text = "" + (int)(cost / costScale);
     }
 
     // Pour gérer la touche I
@@ -77,25 +85,32 @@ public class UIController : MonoBehaviour
 
     public void gainExp(int expGain)
     {
-        Debug.Log("exp : " + exp + " | gain : " + expGain);
         exp += expGain;
-        while (exp >= 10)
+        while (exp >= expNeeded)
         {
             point++;
-            exp -= 10;
+            exp -= expNeeded;
+            lvl++;
+            if (switchExp)
+            {
+                expNeeded++;
+            }
+            switchExp = !switchExp;
+            shooting.restore();
+            PointLabel.text = point + " Points";
             Debug.Log("point:" + point);
         }
     }
 
     public void removeRange()
     {
-        if (range > 0.5)
+        if (range > rangeScale)
         {
             point++;
-            range -= 0.5f;
+            range -= rangeScale;
             shooting.setRange(range);
             PointLabel.text = point + " Points";
-            RangeQuantity.text = "" + range / 0.5f;
+            RangeQuantity.text = "" + range / rangeScale;
         }
     }
     public void addRange()
@@ -103,22 +118,22 @@ public class UIController : MonoBehaviour
         if (point > 0 && range < max)
         {
             point--;
-            range += 0.5f;
+            range += rangeScale;
             shooting.setRange(range);
             PointLabel.text = point + " Points";
-            RangeQuantity.text = "" + range / 0.5f;
+            RangeQuantity.text = "" + range / rangeScale;
         }
     }
 
     public void removeSize()
     {
-        if (size > min)
+        if (size > sizeScale)
         {
             point++;
-            size--;
+            size -= sizeScale;
             shooting.setSize(size);
             PointLabel.text = point + " Points";
-            SizeQuantity.text = "" + size;
+            SizeQuantity.text = "" + size / sizeScale;
         }
     }
 
@@ -127,22 +142,22 @@ public class UIController : MonoBehaviour
         if (point > 0 && size < max)
         {
             point--;
-            size++;
+            size += sizeScale;
             shooting.setSize(size);
             PointLabel.text = point + " Points";
-            SizeQuantity.text = "" + size;
+            SizeQuantity.text = "" + size / sizeScale;
         }
     }
 
     public void removeSpeed()
     {
-        if (speed > min)
+        if (speed > speedScale)
         {
             point++;
-            speed--;
+            speed -= speedScale;
             shooting.setSpeed(speed);
             PointLabel.text = point + " Points";
-            SpeedQuantity.text = "" + speed;
+            SpeedQuantity.text = "" + speed / speedScale;
         }
     }
 
@@ -151,22 +166,22 @@ public class UIController : MonoBehaviour
         if (point > 0 && speed < max)
         {
             point--;
-            speed++;
+            speed += speedScale;
             shooting.setSpeed(speed);
             PointLabel.text = point + " Points";
-            SpeedQuantity.text = "" + speed;
+            SpeedQuantity.text = "" + speed / speedScale;
         }
     }
 
     public void removeDamage()
     {
-        if (damage > min)
+        if (damage > damageScale)
         {
             point++;
-            damage--;
+            damage -= damageScale;
             shooting.setDamage(damage);
             PointLabel.text = point + " Points";
-            DamageQuantity.text = "" + damage;
+            DamageQuantity.text = "" + damage / damageScale;
         }
     }
 
@@ -175,22 +190,24 @@ public class UIController : MonoBehaviour
         if (point > 0 && damage < max)
         {
             point--;
-            damage++;
+            damage += damageScale;
             shooting.setDamage(damage);
             PointLabel.text = point + " Points";
-            DamageQuantity.text = "" + damage;
+            DamageQuantity.text = "" + damage / damageScale;
         }
     }
 
     public void removeCost()
     {
-        if (point > 0 && cost > 0.1)
+        if (point > 0 && cost > costScale)
         {
             point--;
-            cost -= 0.1f;
+            cost -= costScale;
             shooting.setCost(cost);
             PointLabel.text = point + " Points";
-            CostQuantity.text = "" + cost * 10f;
+            CostQuantity.text = "" + Mathf.RoundToInt(cost / costScale);
+            Debug.Log("cost : " + cost);
+            Debug.Log("costScale : " + costScale);
         }
     }
 
@@ -199,10 +216,10 @@ public class UIController : MonoBehaviour
         if (cost < max)
         {
             point++;
-            cost += 0.1f;
+            cost += costScale;
             shooting.setCost(cost);
             PointLabel.text = point + " Points";
-            CostQuantity.text = "" + cost * 10f;
+            CostQuantity.text = "" + Mathf.RoundToInt(cost / costScale);
         }
     }
 }

@@ -9,25 +9,35 @@ public class Spawn : MonoBehaviour
     //public GameObject lightningNpc;
 
     private float period = 5f;
+    private int spawnNb = 0;
+    private int spawnScale = 1;
+    private float scale = 0.3f;
     private Transform pos;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("DoCheck");
+        StartCoroutine("spawn");
     }
 
-    IEnumerator DoCheck()
+    IEnumerator spawn()
     {
         while (true)
         {
-            float spawnY = Random.Range
-                   (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y);
-            float spawnX = Random.Range
-                (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);
+            var height = (2 * Camera.main.orthographicSize);
+            var width = (height * Camera.main.aspect);
 
-            Vector2 spawnPosition = new Vector2(spawnX, spawnY);
+            Vector2 spawnPosition = new Vector2(width / 2, height / 2);
             Instantiate(iceNpc, spawnPosition, Quaternion.identity);
+            spawnNb++;
+            Debug.Log("scale : " + scale);
+            if (spawnNb > spawnScale && period > 0.1)
+            {
+                period -= scale;
+                spawnNb = 0;
+                spawnScale++;
+                Debug.Log("Period : " + period);
+            }
             yield return new WaitForSeconds(period);
         }
     }

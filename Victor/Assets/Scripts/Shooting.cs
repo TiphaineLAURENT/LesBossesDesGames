@@ -11,20 +11,20 @@ public class Shooting : MonoBehaviour
     private float defRange = 9f;
     private float range;
 
-    private float maxSpeed = 60f;
-    private float defSpeed = 18f;
-    private float speed;
-
-    private float maxSize = 10f;
-    private float defSize = 4f;
+    private float maxSize = 40f;
+    private float defSize = 2f;
     private float size;
 
+    private float maxSpeed = 120f;
+    private float defSpeed = 12f;
+    private float speed;
+
     private int maxDamage = 100;
-    private int defDamage = 30;
+    private int defDamage = 15;
     private int damage;
 
     private int maxCost = 100;
-    private int defCost = 10;
+    private int defCost = 20;
     private int cost;
 
     private void Start()
@@ -41,24 +41,31 @@ public class Shooting : MonoBehaviour
         this.range = maxRange * range / 10;
     }
 
-    public void setSpeed(int speed)
-    {
-        this.speed = maxSpeed * speed / 10;
-    }
-
-    public void setSize(int size)
+    public void setSize(float size)
     {
         this.size = maxSize * size / 10;
     }
 
-    public void setDamage(int damage)
+    public void setSpeed(float speed)
     {
-        this.damage = maxDamage * damage / 10;
+        this.speed = maxSpeed * speed / 10;
+    }
+
+
+    public void setDamage(float damage)
+    {
+        this.damage = (int) (maxDamage * damage / 10);
     }
 
     public void setCost(float cost)
     {
         this.cost = (int) (maxCost * cost / 10);
+    }
+
+    public void restore()
+    {
+        gameObject.GetComponent<Stats>().fullLife();
+        gameObject.GetComponent<Stats>().fullMana();
     }
 
     // Update is called once per frame
