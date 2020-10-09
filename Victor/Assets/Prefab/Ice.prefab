@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5453bc0e544363d4fbef4b57dc4b82ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   expGain: 1
   maxLife: 100
   maxMana: 100
@@ -143,7 +145,7 @@ MonoBehaviour:
     type: 3}
   target: {fileID: 0}
   turnSpeed: 120
-  range: 40
+  range: 30
   size: 1
   speed: 100
   damage: 10

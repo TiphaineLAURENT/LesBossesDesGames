@@ -34,7 +34,7 @@ public class UIController : MonoBehaviour
     private float speedScale = 0.5f;
     private float damage = 1.5f;
     private float damageScale = 0.5f;
-    private float cost = 2f;
+    private float cost = 1f;
     private float costScale = 0.1f;
 
     // Pour gérer les valeurs de base

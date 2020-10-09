@@ -121,80 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &274068622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 274068623}
-  - component: {fileID: 274068625}
-  - component: {fileID: 274068624}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &274068623
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274068622}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1752528591}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1152, y: 524}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &274068624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274068622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 198dd59405782ec48860894c90fe3041, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &274068625
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274068622}
-  m_CullTransparentMesh: 0
 --- !u!1 &500810670
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,8 +442,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -108.6}
-  m_SizeDelta: {x: 581.9687, y: 147.89238}
+  m_AnchoredPosition: {x: 0, y: -144}
+  m_SizeDelta: {x: 581.9687, y: 147.8924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735325806
 MonoBehaviour:
@@ -652,13 +578,14 @@ GameObject:
   - component: {fileID: 887501474}
   - component: {fileID: 887501476}
   - component: {fileID: 887501475}
+  - component: {fileID: 887501477}
   m_Layer: 5
   m_Name: IcePic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &887501474
 RectTransform:
   m_ObjectHideFlags: 0
@@ -675,8 +602,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -152.40004, y: 104.70001}
+  m_SizeDelta: {x: 129.59512, y: 129.59512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &887501475
 MonoBehaviour:
@@ -691,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -715,6 +642,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887501473}
   m_CullTransparentMesh: 0
+--- !u!114 &887501477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887501473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2087320326}
+          m_MethodName: ChooseTeam
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &996967063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 996967064}
+  - component: {fileID: 996967066}
+  - component: {fileID: 996967065}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &996967064
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996967063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1752528591}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 2.5, y: 0.7999878}
+  m_SizeDelta: {x: 27.403076, y: 20.9552}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &996967065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996967063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 198dd59405782ec48860894c90fe3041, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &996967066
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996967063}
+  m_CullTransparentMesh: 0
 --- !u!1 &1103906868
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,13 +755,14 @@ GameObject:
   - component: {fileID: 1103906869}
   - component: {fileID: 1103906871}
   - component: {fileID: 1103906870}
+  - component: {fileID: 1103906872}
   m_Layer: 5
   m_Name: BoltPic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1103906869
 RectTransform:
   m_ObjectHideFlags: 0
@@ -749,8 +779,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 151.8, y: 104.7}
+  m_SizeDelta: {x: 129.59766, y: 129.59766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103906870
 MonoBehaviour:
@@ -765,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -789,6 +819,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103906868}
   m_CullTransparentMesh: 0
+--- !u!114 &1103906872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103906868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2087320326}
+          m_MethodName: ChooseTeam
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1244687454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,7 +1172,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 274068623}
+  - {fileID: 996967064}
   - {fileID: 735325805}
   - {fileID: 1244687455}
   - {fileID: 887501474}
@@ -1139,13 +1197,14 @@ GameObject:
   - component: {fileID: 1800054604}
   - component: {fileID: 1800054606}
   - component: {fileID: 1800054605}
+  - component: {fileID: 1800054607}
   m_Layer: 5
   m_Name: FirePic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1800054604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1162,8 +1221,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.30003738, y: 104.70001}
+  m_SizeDelta: {x: 129.59756, y: 129.59756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1800054605
 MonoBehaviour:
@@ -1178,7 +1237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1202,6 +1261,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800054603}
   m_CullTransparentMesh: 0
+--- !u!114 &1800054607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800054603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2087320326}
+          m_MethodName: ChooseTeam
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2065466840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,20 +1407,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2087320324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe30654012542e478a3a8463df3c0e6, type: 3}
+  m_Script: {fileID: 11500000, guid: fb41703563da7e146a75258a572f8fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 735325808}
   nameText: {fileID: 537917669}
   dialogText: {fileID: 2065466842}
   NPCImage: {fileID: 540715363}
+  NPCIce: {fileID: 887501475}
+  NPCFire: {fileID: 1800054605}
+  NPCBolt: {fileID: 1103906870}
   state: 0
   _dialog:
   - name: God
     sentences:
-    - Hello, adventurer !
+    - "Hello, adventurer !\r"
     - I wish your past was good enough...
-    - "Because your future will be harder than you can imagine.\r"
+    - Because your future will be harder than you can imagine.
     - Now, you can choose between three factions.
     - 'You first have the ICE Temple,
 
@@ -1343,8 +1433,10 @@ MonoBehaviour:
 
       Don''t come too close to them, their
       low range attacks will burn you to bones !'
-    - "\rAnd finally, the LIGHTNING crew,\r\nSpeed will be your best defense against
-      their slow but big and powered spells."
+    - 'And finally, the LIGHTNING crew,
+
+      Speed will be your best defense against
+      their slow but big and powered spells.'
     NPC: {fileID: 1244687456}
   - name: Icinator
     sentences:
@@ -1354,12 +1446,11 @@ MonoBehaviour:
     NPC: {fileID: 887501475}
   - name: Flamor
     sentences:
-    - 'No ... Don''t choose him ...
+    - 'No ...
 
-      He''s so anoying ....
+      Don''t choose him ...
 
-      Keep calm
-      and BUUUUURRRNNNNN !!!!'
+      Keep calm and BUUUUURRRNNNNN !!!!'
     NPC: {fileID: 1800054605}
   - name: CrrcrCRrCcrrcRRCRR
     sentences:
@@ -1367,3 +1458,11 @@ MonoBehaviour:
 
       Some day I''ll turn them on ...'
     NPC: {fileID: 1103906870}
+  - name: God
+    sentences:
+    - 'You now have to choose one
+
+      to be your own faction.
+
+      Choose well...'
+    NPC: {fileID: 1244687456}

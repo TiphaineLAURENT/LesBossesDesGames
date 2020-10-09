@@ -17,10 +17,12 @@ public class Spawn : MonoBehaviour
     private float scale = 0.3f;
     private Transform pos;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        startSpawn(true, true, true);
+        if (!FirstCombat.IsFirstCombat)
+        {
+            startSpawn(true, true, true);
+        }
     }
 
     public void startSpawn(bool ice = false, bool fire = false, bool thunder = false)

@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
     private int damage;
 
     private int maxCost = 100;
-    private int defCost = 20;
+    private int defCost = 10;
     private int cost;
 
     private void Start()
@@ -64,6 +64,12 @@ public class Shooting : MonoBehaviour
 
     public void setStat(float range, float size, float speed, int damage, int cost)
     {
+        defRange = range;
+        defSize = size;
+        defSpeed = speed;
+        defDamage = damage;
+        defCost = cost;
+
         this.range = range;
         this.size = size;
         this.speed = speed;

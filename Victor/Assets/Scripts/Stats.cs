@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    public GameObject healthBar;
+    public GameObject manaBar;
+
     private UIController Exp;
     public int expGain = 1;
     public int maxLife = 100;
@@ -19,17 +22,31 @@ public class Stats : MonoBehaviour
         life = maxLife;
         mana = maxMana;
         Exp = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIController>();
+
+        if (gameObject.tag == "Player")
+        {
+            healthBar.GetComponent<UIBars>().SetMaxValue(maxLife);
+            manaBar.GetComponent<UIBars>().SetMaxValue(maxMana);
+        }
+
         StartCoroutine("DoCheck");
     }
 
     void Update()
     {
+        if (gameObject.tag == "Player")
+        {
+            healthBar.GetComponent<UIBars>().SetValue(life);
+            manaBar.GetComponent<UIBars>().SetValue(mana);
+        }
+ 
         if (life <= 0)
         {
             if (gameObject.tag == "Player")
             {
                 if (SceneManager.GetActiveScene().buildIndex != 4)
                 {
+                    FirstCombat.IsFirstCombat = false;
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
                 else
