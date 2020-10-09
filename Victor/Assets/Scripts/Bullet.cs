@@ -32,7 +32,11 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name != gameObject.name && collision.gameObject.name != caster.name)
+        if (collision.gameObject.name == gameObject.name)
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
+        }
+        else if (collision.gameObject.name != caster.name)
         {
             collision.gameObject.GetComponent<Stats>().removeLife(damage);
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);

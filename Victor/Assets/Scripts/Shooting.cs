@@ -62,6 +62,15 @@ public class Shooting : MonoBehaviour
         this.cost = (int) (maxCost * cost / 10);
     }
 
+    public void setStat(float range, float size, float speed, int damage, int cost)
+    {
+        this.range = range;
+        this.size = size;
+        this.speed = speed;
+        this.damage = damage;
+        this.cost = cost;
+    }
+
     public void restore()
     {
         gameObject.GetComponent<Stats>().fullLife();

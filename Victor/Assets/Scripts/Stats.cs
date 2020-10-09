@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Stats : MonoBehaviour
@@ -25,8 +26,22 @@ public class Stats : MonoBehaviour
     {
         if (life <= 0)
         {
-            Exp.gainExp(expGain);
-            Destroy(gameObject);
+            if (gameObject.tag == "Player")
+            {
+                if (SceneManager.GetActiveScene().buildIndex != 4)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+                else
+                {
+                    SceneManager.LoadScene(4);
+                }
+            }
+            else
+            {
+                Exp.gainExp(expGain);
+                Destroy(gameObject);
+            }
         }
     }
 

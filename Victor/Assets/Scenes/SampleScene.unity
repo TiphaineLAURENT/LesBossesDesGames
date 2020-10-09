@@ -5561,7 +5561,7 @@ GameObject:
   - component: {fileID: 1312533293}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5593,6 +5593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iceNpc: {fileID: 8665482884301529059, guid: 693fdd48d18abba47affe95dfecc0a20, type: 3}
+  fireNpc: {fileID: 7502906351088560739, guid: 2df21489644c32d4f90fe2491dc3da3c, type: 3}
+  thunderNpc: {fileID: 7808843162684956969, guid: 54365b0f32aa2e24b8b396d45f9e6166,
+    type: 3}
 --- !u!4 &1319991274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2435033213939438510, guid: cf75f3e9661a7654d84f3ad75842ec37,
